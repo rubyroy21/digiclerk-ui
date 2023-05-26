@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState, useRef } from "react";
+import AllRoutes from "./AllRoutes/AllRoutes";
+import "./App.css";
+import MainContainer from "./Container/MainContainer/MainContainer";
+import CustomerDetails from "./contextApi";
+
 
 function App() {
+  const [selectedCustomer, setSelectedCustomer] = useState("");
+  let bearer = localStorage.getItem("authorization");
+
+
+  useEffect(() => {
+    fetch(
+      `https://dev.xlrt.ai/docparser-gateway-api//customers?findWithDocs=false`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: bearer,
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setSelectedCustomer(data.data[0].customerId);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CustomerDetails.Provider value={{ selectedCustomer, setSelectedCustomer }}>
+      <div className="App">
+        <AllRoutes />
+      </div>
+    </CustomerDetails.Provider>
   );
 }
 

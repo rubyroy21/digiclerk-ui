@@ -1,0 +1,142 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 50px 0px 0px 0px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.left {
+  padding: 50px;
+  color: black;
+}
+
+.right {
+  padding: 20px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 76.25%;
+  padding-right: 10.25%;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.left-container {
+  position: absolute;
+  left: 3rem;
+  top: 16rem;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.upper-text {
+  color: black;
+  font-size: 60px;
+  float: left;
+}
+
+.broken-text {
+  font-size: 60px;
+  float: left;
+  color: black;
+}
+
+.second-text {
+  color: black;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-group-banner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.5em;
+  gap: 30px;
+}
+
+/*Styling Buttons*/
+.try-free-button {
+  background-color: var(--lightTealColor);
+  border: 1.5px solid var(--lightTealColor);
+  border-radius: 0.6em;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #000;
+  width: 140px;
+  height: 50px;
+}
+.try-free-button:hover {
+  color: #000;
+  transition: all ease-in-out 350ms;
+  border-radius: 0.1em;
+  /* box-shadow: var(--lightTealColor) 0px 7px 29px 0px; */
+  box-shadow: var(--lightTealColor) 0px 2px 8px 0px;
+}
+.talk-button {
+  color: var(--darkTealColor);
+  background-color: white;
+  border: 2px solid var(--darkTealColor);
+  border-radius: 0.6em;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+}
+.talk-button:hover {
+  color: var(--darkTealColor);
+  transition: all ease-in-out 350ms;
+  border-radius: 0;
+  box-shadow: var(--darkTealColor) 0px 2px 8px 0px;
+}
+.video-wrapper {
+  position: relative;
+  padding-bottom: 66.25%; /* 16:9 aspect ratio (change accordingly) */
+  padding-right: 30.25%; /* 16:9 aspect ratio (change accordingly) */
+  height: 0;
+  border: 1px solid black;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.left-container-box {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 1em;
+}
+
+.big-font-heading {
+  color: black;
+  font-size: 60px;
+}
+
+.small-font-heading {
+  color: black;
+  font-size: 18px;
+}

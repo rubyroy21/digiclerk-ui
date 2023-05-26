@@ -1,0 +1,13 @@
+.talk-to-us-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
+}
+
+.talk-to-us-dimension {
+  height: 80%;
+  width: 80%;
+}

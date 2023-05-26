@@ -1,0 +1,35 @@
+.sidebar-container {
+  width: 10%;
+  height: 81vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.sidebar-main-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-container {
+  width: 90%;
+  color: black;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar-menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar-menu li a:hover {
+  color: #ff0000;
+}
