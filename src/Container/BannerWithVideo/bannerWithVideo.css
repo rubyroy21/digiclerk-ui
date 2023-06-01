@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 50px 0px 0px 0px;
+  padding: 100px 0px 0px 0px;
 }
 
 @media (min-width: 768px) {

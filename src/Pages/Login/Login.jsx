@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
-import jwt_decode from "jwt-decode";
 import "../SignUp/sign-up.css";
 import "./login.css";
-import { AiFillEye } from "react-icons/ai";
+import Footer from "../../Container/Footer/Footer";
 
 const Login = () => {
   const [userid, setUserid] = useState("");
@@ -44,12 +43,6 @@ const Login = () => {
             .split(/(\s+)/)
             .filter((e) => e.trim().length > 0)[1]
         );
-        // console.log(jwtToken);
-        let decoded = jwt_decode(jwtToken);
-        // console.log(decoded);
-        // localStorage.setItem("credentials", decoded);
-        // console.log(jwtToken);
-
         if (!response.ok) {
           throw new Error("Login request failed");
         }
@@ -62,7 +55,7 @@ const Login = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-    navigate("/dashboard");
+    navigate("/dashboard-customer");
     setStatus(true);
   };
 
@@ -76,7 +69,7 @@ const Login = () => {
       <div className="signup-navbar">
         <div className="web-logo">
           <img
-            src={require("../../Container/Navbar/DigiClerk_green.png")}
+            src={require("../../Container/Navbar/Digiclark powered by Xlrt_teal.png")}
             alt=""
             style={{
               height: "66px",
@@ -104,7 +97,7 @@ const Login = () => {
           &nbsp;Sign up
         </Link>
       </div>
-      <div className="container">
+      <div className="container-signup">
         <div className="column">
           <div className="input-fields">
             <form autoComplete="off" onSubmit={handleLogin}>
@@ -175,14 +168,15 @@ const Login = () => {
       <br />
       <br />
       <br />
-      <div className="footer-text-line1">
+      {/* <div className="footer-text-line1">
         * By signing up, you agree to our Terms of Use and acknowledge you've
         read our Privacy Policy
       </div>
       <div className="footer-text-line2">
         This site is protected by reCAPTCHA Enterprise. Google's Privacy Policy
         and Terms of Use apply.
-      </div>
+      </div> */}
+      <Footer />
     </div>
   );
 };

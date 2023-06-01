@@ -3,6 +3,7 @@ import "../SignUp/sign-up.css";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import "./talk-to-us.css";
+import Footer from "../../Container/Footer/Footer";
 
 const TalkToUs = () => {
   return (
@@ -10,7 +11,7 @@ const TalkToUs = () => {
       <div className="signup-navbar">
         <div className="web-logo">
           <img
-            src={require("../../Container/Navbar/DigiClerk_green.png")}
+            src={require("../../Container/Navbar/Digiclark powered by Xlrt_teal.png")}
             alt=""
             style={{
               height: "66px",
@@ -75,39 +76,20 @@ const TalkToUs = () => {
               alt=""
               className="talk-to-us-dimension"
             />
-            {/* <div className="google-signup">
-              <div className="google-logo">
-                <img
-                  src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-                  alt=""
-                  className="google-png"
-                />
-              </div>
-              <div className="google-text">Continue with Google</div>
-            </div>
-            <div className="google-signup">
-              <div className="google-logo">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/800px-LinkedIn_icon_circle.svg.png"
-                  alt=""
-                  className="linkedIn-png"
-                />
-              </div>
-              <div className="google-text">Continue with LinkedIn</div>
-            </div> */}
           </div>
         </div>
       </div>
       <br />
       <br />
-      <div className="footer-text-line1">
+      {/* <div className="footer-text-line1">
         * By signing up, you agree to our Terms of Use and acknowledge you've
         read our Privacy Policy
       </div>
       <div className="footer-text-line2">
         This site is protected by reCAPTCHA Enterprise. Google's Privacy Policy
         and Terms of Use apply.
-      </div>
+      </div> */}
+      <Footer />
     </div>
   );
 };

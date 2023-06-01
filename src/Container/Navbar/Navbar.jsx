@@ -19,17 +19,23 @@ export default function Navbar() {
     localStorage.removeItem("authorization");
     navigate("/");
   };
+
+  const handleAccountSetting = () => {
+    navigate("/account-settings");
+  };
   return (
     <nav>
       <div className="logo">
-        <img
-          src={require("./DigiClerk_green.png")}
-          alt=""
-          style={{
-            height: "90px",
-            width: "230px",
-          }}
-        />
+        <Link to="/">
+          <img
+            src={require("./Digiclark powered by Xlrt_teal.png")}
+            alt=""
+            style={{
+              height: "90px",
+              width: "230px",
+            }}
+          />
+        </Link>
       </div>
       <div
         className={isNavlinkOpen ? "hamburger toggle" : "hamburger"}
@@ -47,7 +53,7 @@ export default function Navbar() {
           {/* <span>
             <AiOutlineDown style={iconStyle} />
           </span> */}
-          <ul className="dropdown-menu">
+          <ul className="dropdown-menubar">
             <li className="dropdown-text">action 1</li>
             <li className="dropdown-text">action 2</li>
             <li className="dropdown-text">action 3</li>
@@ -55,18 +61,26 @@ export default function Navbar() {
           </ul>
         </li>
         <li className={isNavlinkOpen ? "fade" : ""}>Company</li>
-        <li className={isNavlinkOpen ? "fade" : ""}>Pricing</li>
+        <li className={isNavlinkOpen ? "fade" : ""}>
+          <Link to="/pricing">Pricing</Link>
+        </li>
         {authorization ? (
           <>
             <PopupState variant="popover" popupId="demo-popup-menu">
               {(popupState) => (
                 <>
-                  <Button variant="contained" {...bindTrigger(popupState)}>
-                    Hi {userName}
+                  <Button
+                    variant="contained"
+                    {...bindTrigger(popupState)}
+                    id="btn-username"
+                  >
+                    Hi! {userName}
                   </Button>
                   <Menu {...bindMenu(popupState)}>
                     <MenuItem onClick={popupState.close}>Profile</MenuItem>
-                    <MenuItem onClick={popupState.close}>My account</MenuItem>
+                    <MenuItem onClick={handleAccountSetting}>
+                      Account Settings
+                    </MenuItem>
                     <MenuItem onClick={handleLogout}>Logout</MenuItem>
                   </Menu>
                 </>

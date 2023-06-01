@@ -4,6 +4,7 @@ import { Box, Button, Stack } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { useContext } from "react";
 import CustomerDetails from "../../contextApi";
+import axios from "axios";
 
 const columns = [
   { field: "id", headerName: "ID", width: 100 },
@@ -18,8 +19,22 @@ const DataGridPro = ({ selectedCustomer }) => {
   const [docs, setDocs] = useState([]);
   const getRowId = (row) => uuidv4();
 
-  const fetchData = () => {
+  const fetchData = async () => {
     let bearer = localStorage.getItem("authorization");
+
+    //  try {
+    //     const response = await axios.get("https://dev.xlrt.ai/docparser-gateway-api//customers/" +
+    //     selectedCustomer +
+    //     "/docs", {
+    //       headers: {
+    //         Authorization: bearer,
+    //         'Content-Type': 'application/json',
+    //       }});
+    //       console.log(response)
+    //     setDocs(response);
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //   }
 
     fetch(
       "https://dev.xlrt.ai/docparser-gateway-api//customers/" +

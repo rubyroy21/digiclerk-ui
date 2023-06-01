@@ -1,14 +1,11 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import AllRoutes from "./AllRoutes/AllRoutes";
 import "./App.css";
-import MainContainer from "./Container/MainContainer/MainContainer";
 import CustomerDetails from "./contextApi";
-
 
 function App() {
   const [selectedCustomer, setSelectedCustomer] = useState("");
   let bearer = localStorage.getItem("authorization");
-
 
   useEffect(() => {
     fetch(

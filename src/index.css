@@ -4,8 +4,13 @@
   color: #000;
   letter-spacing: 1px;
   font-weight: 300;
+  box-sizing: border-box;
   --lightTealColor: #90c4d5;
   --darkTealColor: #154954;
+  --primary: 25, 91, 255;
+  --color: 44, 62, 80;
+  --bg: 255, 255, 255;
+  --red: 255, 0, 78;
 }
 
 body {

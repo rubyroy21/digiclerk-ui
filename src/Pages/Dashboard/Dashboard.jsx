@@ -14,6 +14,8 @@ import {
 import FolderRoundedIcon from "@mui/icons-material/FolderRounded";
 import { PrimaryTabs } from "../PrimaryTabs/PrimaryTabs";
 import CustomerDetails from "../../contextApi";
+import Footer from "../../Container/Footer/Footer";
+import axios from "axios";
 
 const Dashboard = () => {
   const { selectedCustomer } = useContext(CustomerDetails);
@@ -23,6 +25,18 @@ const Dashboard = () => {
 
   const getAllCustomerDetails = async () => {
     setLoading(true);
+    //  try {
+    //     const response = await axios.get('https://dev.xlrt.ai/docparser-gateway-api//customers?findWithDocs=false', {
+    //       headers: {
+    //       Authorization: bearer,
+    //       "Content-Type": "application/json",
+    //     },
+    //     });
+    //       setCustomerDetails(response);
+    //     setLoading(false);
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //   }
     await fetch(
       `https://dev.xlrt.ai/docparser-gateway-api//customers?findWithDocs=false`,
       {
@@ -54,6 +68,7 @@ const Dashboard = () => {
         sx={{
           display: "flex",
           width: "100%",
+          paddingTop: "6.5em",
         }}
       >
         <Box
@@ -89,6 +104,9 @@ const Dashboard = () => {
           }}
         ></Box>
       </Box>
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 };
