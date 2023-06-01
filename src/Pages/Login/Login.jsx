@@ -37,6 +37,14 @@ const Login = () => {
           "authorization",
           response.headers.get("authorization")
         );
+        localStorage.setItem(
+          "jwtSecurityToken",
+          response.headers.get("authorization")
+        );
+        localStorage.setItem(
+          "credentials",
+          response.headers.get("authorization")
+        );
         localStorage.setItem("username", userid);
         setJwtToken(
           response.headers
@@ -47,7 +55,7 @@ const Login = () => {
         // console.log(jwtToken);
         let decoded = jwt_decode(jwtToken);
         // console.log(decoded);
-        // localStorage.setItem("credentials", decoded);
+        localStorage.setItem("credentials", decoded);
         // console.log(jwtToken);
 
         if (!response.ok) {
