@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
+import jwt_decode from "jwt-decode";
 import "../SignUp/sign-up.css";
 import "./login.css";
+import { AiFillEye } from "react-icons/ai";
 import Footer from "../../Container/Footer/Footer";
 
 const Login = () => {
@@ -36,6 +38,14 @@ const Login = () => {
           "authorization",
           response.headers.get("authorization")
         );
+        localStorage.setItem(
+          "jwtSecurityToken",
+          response.headers.get("authorization")
+        );
+        localStorage.setItem(
+          "credentials",
+          response.headers.get("authorization")
+        );
         localStorage.setItem("username", userid);
         setJwtToken(
           response.headers
@@ -43,6 +53,12 @@ const Login = () => {
             .split(/(\s+)/)
             .filter((e) => e.trim().length > 0)[1]
         );
+        // console.log(jwtToken);
+        let decoded = jwt_decode(jwtToken);
+        // console.log(decoded);
+        localStorage.setItem("credentials", decoded);
+        // console.log(jwtToken);
+
         if (!response.ok) {
           throw new Error("Login request failed");
         }

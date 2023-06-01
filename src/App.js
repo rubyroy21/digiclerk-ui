@@ -8,23 +8,23 @@ function App() {
   let bearer = localStorage.getItem("authorization");
 
   useEffect(() => {
-    fetch(
-      `https://dev.xlrt.ai/docparser-gateway-api//customers?findWithDocs=false`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: bearer,
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setSelectedCustomer(data.data[0].customerId);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+    // fetch(
+    //   `https://dev.xlrt.ai/docparser-gateway-api//customers?findWithDocs=false`,
+    //   {
+    //     method: "GET",
+    //     headers: {
+    //       Authorization: bearer,
+    //       "Content-Type": "application/json",
+    //     },
+    //   }
+    // )
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setSelectedCustomer(data.data[0].customerId);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error fetching data:", error);
+    //   });
   }, []);
   return (
     <CustomerDetails.Provider value={{ selectedCustomer, setSelectedCustomer }}>
