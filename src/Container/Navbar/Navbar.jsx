@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* <span>
             <AiOutlineDown style={iconStyle} />
           </span> */}
-          <ul className="dropdown-menubar">
+          <ul className="dropdownMenubar">
             <li className="dropdown-text">action 1</li>
             <li className="dropdown-text">action 2</li>
             <li className="dropdown-text">action 3</li>
