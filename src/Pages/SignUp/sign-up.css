@@ -64,8 +64,8 @@
 }
 
 .link-login {
-  color: #116dff;
-  text-decoration: none;
+  color: #116dff !important;
+  text-decoration: none !important;
 }
 
 .close-icon-link {
