@@ -5,19 +5,16 @@ import { v4 as uuidv4 } from "uuid";
 import { useContext } from "react";
 import CustomerDetails from "../../contextApi";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const columns = [
-  { field: "id", headerName: "ID", width: 100 },
-  { field: "filename", headerName: "Document Name", width: 250 },
-  { field: "documenttype", headerName: "Document Type", width: 200 },
-  { field: "currentstate", headerName: "Current State", width: 200 },
-  { field: "action", headerName: "Action", width: 250 },
-];
 
 const DataGridPro = ({ selectedCustomer }) => {
   // const { selectedCustomer } = useContext(CustomerDetails);
   const [docs, setDocs] = useState([]);
   const getRowId = (row) => uuidv4();
+  const [docId, setDocId] = useState("")
+  const navigate=useNavigate()
+
 
   const fetchData = async () => {
     let bearer = localStorage.getItem("authorization");
@@ -83,6 +80,41 @@ const DataGridPro = ({ selectedCustomer }) => {
         };
       })
     : [];
+     const handleButtonClick = (params) => {
+    // Access the row data using params.row
+    // console.log('Clicked row data:', params.row.id.split("-").join(""));
+    const docId =  params.row.id.split("-").join(""); // ID parameter value
+    // localStorage.setItem("docId", docId)
+    navigate(`/fs/${docId}`);
+    // setDocId(params.row.id.split("-").join(""))
+  };
+
+        
+const columns = [
+  { field: "id", headerName: "ID", width: 100 },
+  { field: "filename", headerName: "Document Name", width: 250 },
+  { field: "documenttype", headerName: "Document Type", width: 200 },
+  { field: "currentstate", headerName: "Current State", width: 200 },
+  {
+    field: 'actions',
+    type: 'actions',
+    headerName: 'Actions',
+    flex: 0.2,
+    getActions: (params) => [
+      <Button variant="contained" size="small" onClick={handleGetDocId}>
+        View XML
+      </Button>,
+    ],
+  },
+];
+
+const handleGetDocId = () => {
+  console.log(docId)
+  navigate(`/fs/${docId}`)
+}
+
+
+   
 
   console.log(docs, "documents");
   return (
@@ -112,6 +144,7 @@ const DataGridPro = ({ selectedCustomer }) => {
           Toolbar: GridToolbar,
         }}
         getRowId={getRowId}
+        onCellClick={handleButtonClick}
       />
     </div>
   );
