@@ -22,7 +22,7 @@ const XmlReview = () => {
     //   console.error(error);
     // });
     
-      ref.current._ngElementStrategy.componentRef.instance.docId = "0bfe932bee5842d4b2be268353cf8d4a"
+      ref.current._ngElementStrategy.componentRef.instance.docId = "bc8515f7ef7f4b3886ca67a4bff2d5e9"
     
      }, [])
 
