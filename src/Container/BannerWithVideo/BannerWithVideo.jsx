@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const BannerWithVideo = () => {
   return (
     <>
-      <div className="container">
+      <div className="container-homepage">
         <div className="left left-container-box">
           <div className="big-font-heading">Unleash</div>
           <div className="big-font-heading">the Power of</div>

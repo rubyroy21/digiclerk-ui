@@ -54,12 +54,13 @@ nav {
   /* border: 1px solid black; */
 }
 
-.nav-links li a {
-  text-decoration: none;
-  margin: 0 0.7vw;
+.nav-links li .link-css {
+  text-decoration: none !important;
+  margin: 0 0.7vw !important;
+  color: #000 !important;
 }
-.nav-links li a:hover {
-  color: #61dafb;
+.nav-links li .link-css:hover {
+  color: #61dafb !important;
 }
 .nav-links li {
   position: relative;
@@ -67,18 +68,18 @@ nav {
   font-size: 14px;
   /* border: 1px solid black; */
 }
-.nav-links li a::before {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 0%;
+.nav-links li .link-css::before {
+  content: "" !important;
+  display: block !important;
+  height: 3px !important;
+  width: 0% !important;
   /* background-color: #61dafb; */
-  position: absolute;
-  transition: all ease-in-out 250ms;
-  margin: 0 0 0 10%;
+  position: absolute !important;
+  transition: all ease-in-out 250ms !important;
+  margin: 0 0 0 10% !important;
 }
-.nav-links li a:hover::before {
-  width: 80%;
+.nav-links li .link-css:hover::before {
+  width: 80% !important;
 }
 
 .btn-username {
@@ -307,6 +308,6 @@ nav {
 }
 
 .link-signup {
-  text-decoration: none;
-  color: #000;
+  text-decoration: none !important;
+  color: #000 !important;
 }

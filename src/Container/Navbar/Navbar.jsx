@@ -62,7 +62,7 @@ export default function Navbar() {
         </li>
         <li className={isNavlinkOpen ? "fade" : ""}>Company</li>
         <li className={isNavlinkOpen ? "fade" : ""}>
-          <Link to="/pricing">Pricing</Link>
+          <Link to="/pricing" className="link-css">Pricing</Link>
         </li>
         {authorization ? (
           <>
