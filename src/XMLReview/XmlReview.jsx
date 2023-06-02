@@ -1,6 +1,6 @@
 import React, {useEffect , useRef} from 'react'
 import "../xmlFlow/xml-flow"
-// import "../xmlFlow/xml-flow.css"
+import "../xmlFlow/xml-flow.css"
 import axios from 'axios';
 
 
@@ -21,8 +21,10 @@ const XmlReview = () => {
     //   // Handle the error
     //   console.error(error);
     // });
-    
-      ref.current._ngElementStrategy.componentRef.instance.docId = "bc8515f7ef7f4b3886ca67a4bff2d5e9"
+      setTimeout(()=>{
+        ref.current.docId = "bc8515f7ef7f4b3886ca67a4bff2d5e9"
+      } , 0)
+      
     
      }, [])
 
