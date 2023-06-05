@@ -17,6 +17,8 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("authorization");
+    localStorage.removeItem("jwtSecurityToken")
+    localStorage.removeItem("credentials")
     navigate("/");
   };
 

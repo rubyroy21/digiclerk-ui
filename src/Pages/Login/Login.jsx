@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
-import jwt_decode from "jwt-decode";
+import jwtDecode from 'jwt-decode';
 import "../SignUp/sign-up.css";
 import "./login.css";
 import { AiFillEye } from "react-icons/ai";
@@ -34,6 +34,8 @@ const Login = () => {
       }),
     })
       .then((response) => {
+        let auth =  response.headers.get("authorization").split(/(\s+)/)
+            .filter((e) => e.trim().length > 0)[1]
         localStorage.setItem(
           "authorization",
           response.headers.get("authorization")
@@ -42,10 +44,7 @@ const Login = () => {
           "jwtSecurityToken",
           response.headers.get("authorization")
         );
-        localStorage.setItem(
-          "credentials",
-          response.headers.get("authorization")
-        );
+        
         localStorage.setItem("username", userid);
         setJwtToken(
           response.headers
@@ -53,10 +52,12 @@ const Login = () => {
             .split(/(\s+)/)
             .filter((e) => e.trim().length > 0)[1]
         );
-        // console.log(jwtToken);
-        let decoded = jwt_decode(jwtToken);
+        let decodedToken = jwtDecode(auth);
+         console.log(decodedToken)
         // console.log(decoded);
-        localStorage.setItem("credentials", decoded);
+        localStorage.setItem("credentials", JSON.stringify(decodedToken));
+        // console.log(jwtToken);
+         
         // console.log(jwtToken);
 
         if (!response.ok) {
@@ -66,7 +67,9 @@ const Login = () => {
       })
       .then((data) => {
         // console.log(data, "data");
-        setResponse(data); // Store the response in the state variable
+        setResponse(data);
+        
+         // Store the response in the state variable
       })
       .catch((error) => {
         console.error("Error:", error);

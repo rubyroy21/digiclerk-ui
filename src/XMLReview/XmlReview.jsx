@@ -2,10 +2,13 @@ import React, {useEffect , useRef} from 'react'
 import "../xmlFlow/xml-flow"
 import "../xmlFlow/xml-flow.css"
 import axios from 'axios';
+import { useParams } from 'react-router';
 
 
 const XmlReview = () => {
   const ref = useRef();
+  const {docId} = useParams()
+  console.log(docId, "document id")
 
   useEffect(() => {
 
@@ -23,6 +26,7 @@ const XmlReview = () => {
     // });
       setTimeout(()=>{
         ref.current.docId = "bc8515f7ef7f4b3886ca67a4bff2d5e9"
+        console.log(ref.current.docId)
       } , 0)
       
     
