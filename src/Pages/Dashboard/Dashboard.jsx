@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../../Container/Navbar/Navbar";
 import {
-  ListItemButton,
   List,
   ListItemText,
   IconButton,
@@ -15,7 +14,8 @@ import FolderRoundedIcon from "@mui/icons-material/FolderRounded";
 import { PrimaryTabs } from "../PrimaryTabs/PrimaryTabs";
 import CustomerDetails from "../../contextApi";
 import Footer from "../../Container/Footer/Footer";
-import axios from "axios";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 
 const Dashboard = () => {
   const { selectedCustomer } = useContext(CustomerDetails);
@@ -168,13 +168,23 @@ const CustomerSidePanel = (props) => {
           borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
         }}
       >
-        <Typography
-          sx={{
-            fontSize: 14,
+        <Autocomplete
+          id="free-solo-demo"
+          freeSolo
+          options={props.customerDetails.data?.map(
+            (option) => option.customerId
+          )}
+          renderInput={(params) => (
+            <TextField {...params} label="Search Customer" />
+          )}
+          style={{
+            width: 250,
+            height: 30,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        >
-          Customers
-        </Typography>
+        />
       </Toolbar>
       <Box
         sx={{

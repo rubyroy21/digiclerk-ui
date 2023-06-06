@@ -90,7 +90,7 @@
   box-shadow: var(--lightTealColor) 0px 2px 8px 0px;
 }
 .talk-button {
-  color: var(--darkTealColor);
+  color: var(--darkTealColor) !important;
   background-color: white;
   border: 2px solid var(--darkTealColor);
   border-radius: 0.6em;
@@ -101,7 +101,7 @@
   cursor: pointer;
 }
 .talk-button:hover {
-  color: var(--darkTealColor);
+  color: var(--darkTealColor) !important;
   transition: all ease-in-out 350ms;
   border-radius: 0;
   box-shadow: var(--darkTealColor) 0px 2px 8px 0px;

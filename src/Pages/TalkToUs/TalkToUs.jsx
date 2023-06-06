@@ -7,7 +7,7 @@ import Footer from "../../Container/Footer/Footer";
 
 const TalkToUs = () => {
   return (
-    <div className="main-div">
+    <div className="main-div-1">
       <div className="signup-navbar">
         <div className="web-logo">
           <img
@@ -34,7 +34,7 @@ const TalkToUs = () => {
         </div>
       </div>
       <div className="second-text-line">Feel free to reach to us</div>
-      <div className="container">
+      <div className="container-signup">
         <div className="column">
           <div className="input-fields">
             <form autoComplete="off">

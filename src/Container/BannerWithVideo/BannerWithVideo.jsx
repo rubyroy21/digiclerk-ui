@@ -20,7 +20,10 @@ const BannerWithVideo = () => {
               Try Free
             </button>
             <button className="talk-button" href="#">
-              <Link to="/talkToUs" style={{ textDecoration: "none" }}>
+              <Link
+                to="/talkToUs"
+                style={{ textDecoration: "none", color: "#000" }}
+              >
                 Talk To Us
               </Link>
             </button>
