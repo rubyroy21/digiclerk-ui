@@ -14,7 +14,6 @@ const XmlReview = () => {
 
       // ref.current.__ngContext__[ref.current.__ngContext__.length-1].createOrupdateViewer({docUrl:"https://dev.xlrt.ai/dms-api/dms/download/5fe318f2c4bc44a4877bec2e61dcbb6b"})
     //   let docId = localStorage.getItem("docId")
-
     //    axios.get(`http://localhost:3000/fs/${docId}`)
     // .then(response => {
     //   // Handle the response data
@@ -25,11 +24,9 @@ const XmlReview = () => {
     //   console.error(error);
     // });
       setTimeout(()=>{
-        ref.current.docId = "bc8515f7ef7f4b3886ca67a4bff2d5e9"
+        ref.current.docId = docId
         console.log(ref.current.docId)
       } , 0)
-      
-    
      }, [])
 
   return (

@@ -88,7 +88,6 @@ const Dashboard = () => {
           sx={{
             display: "flex",
             width: "100%",
-            background: "red",
           }}
         >
           <Stack sx={{ width: "100%" }}>
@@ -202,25 +201,25 @@ const CustomerSidePanel = (props) => {
           <h4>Loading....</h4>
         ) : (
           <List
-            dense
             sx={{
-              p: (theme) => 0,
+              width: "100%",
+              maxWidth: 360,
+              bgcolor: "background.paper",
+              position: "relative",
+              overflow: "auto",
+              maxHeight: 500,
+              "& ul": { padding: 0 },
+              cursor: "pointer",
             }}
+            subheader={<li />}
           >
             {props.customerDetails.data?.map((el, i) => (
-              <ListItem key={i} disablePadding>
-                <ListItemButton
-                  sx={{
-                    height: (theme) => theme.spacing(6),
-                  }}
-                >
-                  <ListItemText
-                    primary={el.customerId}
-                    // secondary={item.customerId}
-                    primaryTypographyProps={{ sx: { fontSize: 14 } }}
-                    onClick={() => handleCustomerDetails(el)}
-                  />
-                </ListItemButton>
+              <ListItem key={i}>
+                <ListItemText
+                  primary={el.customerId}
+                  primaryTypographyProps={{ sx: { fontSize: 14 } }}
+                  onClick={() => handleCustomerDetails(el)}
+                />
               </ListItem>
             ))}
           </List>
