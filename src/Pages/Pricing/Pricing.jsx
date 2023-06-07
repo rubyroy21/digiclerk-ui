@@ -9,6 +9,15 @@ const Pricing = () => {
   return (
     <>
       <Navbar />
+      <PricingPackage />
+      <Footer />
+    </>
+  );
+};
+
+const PricingPackage = () => {
+  return (
+    <>
       <div
         style={{
           display: "flex",
@@ -213,9 +222,7 @@ const Pricing = () => {
       <br />
       <br />
       <br />
-      <Footer />
     </>
   );
 };
-
-export default Pricing;
+export { Pricing, PricingPackage };

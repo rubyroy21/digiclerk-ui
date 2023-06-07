@@ -5,7 +5,7 @@ import TalkToUs from "../Pages/TalkToUs/TalkToUs";
 import AccountSetting from "../Pages/AccountSetting/AccountSetting";
 import { Dashboard } from "../Pages/Dashboard/Dashboard";
 import XmlReview from "../XMLReview/XmlReview";
-import Pricing from "../Pages/Pricing/Pricing";
+import { Pricing } from "../Pages/Pricing/Pricing";
 import PaymentSummary from "../Pages/PaymentSummary/PaymentSummary";
 import HomePage from "../Pages/HomePage/HomePage";
 
